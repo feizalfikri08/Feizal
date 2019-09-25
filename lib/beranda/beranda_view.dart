@@ -76,6 +76,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     children: <Widget>[
                       _buildGopayMenu(),
                       _buildGojekServicesMenu(),
+                      _buildPromo()
                     ],
                   )),
               new Container(
