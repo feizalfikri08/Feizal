@@ -3,7 +3,6 @@ import 'package:gojek/beranda/beranda_model.dart';
 import 'package:gojek/beranda/beranda_gojek_appbar.dart';
 import 'package:gojek/constans.dart';
 import 'dart:async';
-import 'dart:io';
 
 class BerandaPage extends StatefulWidget {
   @override
