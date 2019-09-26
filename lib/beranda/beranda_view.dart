@@ -49,7 +49,7 @@ class _BerandaPageState extends State<BerandaPage> {
                   color: Colors.white,
                   child: new Column(
                     children: <Widget>[
-                      _buildGopayMenu(),
+                      _buildMenu(),
                       _buildTravelServicesMenu(),
                     ],
                   )),
@@ -59,7 +59,7 @@ class _BerandaPageState extends State<BerandaPage> {
                 child: new Column(
                   children: <Widget>[
                     _buildGotravelFeatured(),
-                    _buildPromo(),
+                    _buildDestinasi(),
                   ],
                 ),
               )
@@ -70,7 +70,7 @@ class _BerandaPageState extends State<BerandaPage> {
     );
   }
 
-  Widget _buildGopayMenu() {
+  Widget _buildMenu() {
     return new Container(
         height: 120.0,
         decoration: new BoxDecoration(
@@ -220,7 +220,7 @@ class _BerandaPageState extends State<BerandaPage> {
               decoration: new BoxDecoration(
                   border: Border.all(color: TravelPalette.grey200, width: 1.0),
                   borderRadius:
-                      new BorderRadius.all(new Radius.circular(20.0))),
+                      new BorderRadius.all(new Radius.circular(30.0))),
               padding: EdgeInsets.all(12.0),
               child: new Icon(
                 travelService.image,
@@ -230,7 +230,7 @@ class _BerandaPageState extends State<BerandaPage> {
             ),
           ),
           new Padding(
-            padding: EdgeInsets.only(top: 6.0),
+            padding: EdgeInsets.only(top: 9.0),
           ),
           new Text(travelService.title, style: new TextStyle(fontSize: 10.0))
         ],
@@ -249,14 +249,14 @@ class _BerandaPageState extends State<BerandaPage> {
             style: new TextStyle(fontFamily: "NeoSansBold"),
           ),
           new Padding(
-            padding: EdgeInsets.only(top: 8.0),
+            padding: EdgeInsets.only(top: 10.0),
           ),
           new Text(
             "Pilihan Terbaik",
             style: new TextStyle(fontFamily: "NeoSansBold"),
           ),
           new SizedBox(
-            height: 172.0,
+            height: 200.0,
             child: FutureBuilder<List>(
                 future: fetchTravel(),
                 builder: (context, snapshot) {
@@ -308,16 +308,16 @@ class _BerandaPageState extends State<BerandaPage> {
     );
   }
 
-  Widget _buildPromo() {
+  Widget _buildDestinasi() {
     return new Container(
         margin: EdgeInsets.all(16.0),
         child: FutureBuilder(
-          future: fetchPromo(),
+          future: fetchDestinasi(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return new Column(
                   children: snapshot.data.map<Widget>((data) {
-                return _rowPromo(data);
+                return _rowDestinasi(data);
               }).toList());
             }
             return Center(
@@ -330,7 +330,7 @@ class _BerandaPageState extends State<BerandaPage> {
         ));
   }
 
-  Widget _rowPromo(Promo promo) {
+  Widget _rowDestinasi(Destinasi destinasi) {
     return new Container(
       height: 320.0,
       child: new Column(
@@ -345,7 +345,7 @@ class _BerandaPageState extends State<BerandaPage> {
           new ClipRRect(
             borderRadius: new BorderRadius.circular(8.0),
             child: new Image.asset(
-              promo.image,
+              destinasi.image,
               height: 172.0,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -355,14 +355,14 @@ class _BerandaPageState extends State<BerandaPage> {
             padding: EdgeInsets.only(top: 16.0),
           ),
           new Text(
-            promo.title,
+            destinasi.title,
             style: new TextStyle(fontFamily: "NeoSansBold", fontSize: 16.0),
           ),
           new Padding(
             padding: EdgeInsets.only(top: 8.0),
           ),
           new Text(
-            promo.content,
+            destinasi.content,
             maxLines: 2,
             softWrap: true,
             style: new TextStyle(color: Colors.grey, fontSize: 14.0),
@@ -376,7 +376,7 @@ class _BerandaPageState extends State<BerandaPage> {
               color: TravelPalette.green,
               onPressed: () {},
               child: new Text(
-                promo.button,
+                destinasi.button,
                 style: new TextStyle(
                     color: Colors.white,
                     fontFamily: "NeoSansBold",
@@ -429,8 +429,10 @@ class _BerandaPageState extends State<BerandaPage> {
 
   Future<List<Travel>> fetchTravel() async {
     List<Travel> _goTravelFeaturedList = [];
-    _goTravelFeaturedList.add(
-        new Travel(title: " Antelope Canyon", image: "assets/images/1.jpg"));
+    _goTravelFeaturedList.add(new Travel(
+      title: " Antelope Canyon",
+      image: "assets/images/1.jpg",
+    ));
     _goTravelFeaturedList.add(
         new Travel(title: "Aogashima Volcano", image: "assets/images/2.jpg"));
     _goTravelFeaturedList.add(new Travel(
@@ -445,28 +447,28 @@ class _BerandaPageState extends State<BerandaPage> {
     });
   }
 
-  Future<List<Promo>> fetchPromo() async {
-    List<Promo> _poromoList = [];
+  Future<List<Destinasi>> fetchDestinasi() async {
+    List<Destinasi> _poromoList = [];
 
-    _poromoList.add(new Promo(
+    _poromoList.add(new Destinasi(
         image: "assets/images/6.jpg",
         title: "Destinasi Pulau Amorgos",
         content:
             "Amorgos adalah pulau paling timur dari kelompok pulau Cyclades dan pulau terdekat dengan kelompok pulau Dodecanese di Yunani .",
         button: "Selengkapnya"));
-    _poromoList.add(new Promo(
+    _poromoList.add(new Destinasi(
         image: "assets/images/7.jpg",
         title: "Destinasi Pulau Hainan",
         content:
             "Hainan termasuk kepulauan yang terdiri dari pulau-pulau lainnya seperti Zhongsha, Xisha, dan Nansha serta wilayah laut sekitarnya. Menjadi pulau terbesar kedua di Cina",
         button: "Selengkapnya"));
-    _poromoList.add(new Promo(
+    _poromoList.add(new Destinasi(
         image: "assets/images/8.jpg",
         title: " Dusseldorf",
         content:
             " Dusseldorf, adalah pusat ekonomi regional yang terletak di tepi sungai Rhine",
         button: "Selengkapnya"));
-    _poromoList.add(new Promo(
+    _poromoList.add(new Destinasi(
         image: "assets/images/9.jpg",
         title: "Los Angeles",
         content:

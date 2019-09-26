@@ -14,11 +14,11 @@ class Travel {
   Travel({this.title, this.image});
 }
 
-class Promo {
+class Destinasi {
   String image;
   String title;
   String content;
   String button;
 
-  Promo({this.image, this.title, this.content, this.button});
+  Destinasi({this.image, this.title, this.content, this.button});
 }
