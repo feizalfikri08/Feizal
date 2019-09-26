@@ -17,45 +17,19 @@ class _BerandaPageState extends State<BerandaPage> {
     super.initState();
 
     _gojekServiceList.add(new GojekService(
-        image: Icons.directions_bike,
+        image: Icons.smartphone,
         color: GojekPalette.menuRide,
-        title: "GO-RIDE"));
+        title: "Paket Internet"));
     _gojekServiceList.add(new GojekService(
-        image: Icons.local_car_wash,
+        image: Icons.airport_shuttle,
         color: GojekPalette.menuCar,
-        title: "GO-CAR"));
+        title: "Antar Jemput"));
     _gojekServiceList.add(new GojekService(
-        image: Icons.directions_car,
+        image: Icons.calendar_today,
         color: GojekPalette.menuBluebird,
-        title: "GO-BLUEBIRD"));
+        title: "Atur Schedule"));
     _gojekServiceList.add(new GojekService(
-        image: Icons.restaurant,
-        color: GojekPalette.menuFood,
-        title: "GO-FOOD"));
-    _gojekServiceList.add(new GojekService(
-        image: Icons.next_week,
-        color: GojekPalette.menuSend,
-        title: "GO-SEND"));
-    _gojekServiceList.add(new GojekService(
-        image: Icons.local_offer,
-        color: GojekPalette.menuDeals,
-        title: "GO-DEALS"));
-    _gojekServiceList.add(new GojekService(
-        image: Icons.phonelink_ring,
-        color: GojekPalette.menuPulsa,
-        title: "GO-PULSA"));
-    _gojekServiceList.add(new GojekService(
-        image: Icons.apps, color: GojekPalette.menuOther, title: "LAINNYA"));
-    _gojekServiceList.add(new GojekService(
-        image: Icons.shopping_basket,
-        color: GojekPalette.menuShop,
-        title: "GO-SHOP"));
-    _gojekServiceList.add(new GojekService(
-        image: Icons.shopping_cart,
-        color: GojekPalette.menuMart,
-        title: "GO-MART"));
-    _gojekServiceList.add(new GojekService(
-        image: Icons.local_play, color: GojekPalette.menuTix, title: "GO-TIX"));
+        image: Icons.restaurant, color: GojekPalette.menuFood, title: "Makan"));
   }
 
   @override
@@ -121,21 +95,12 @@ class _BerandaPageState extends State<BerandaPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   new Text(
-                    "GOPAY",
+                    "Tiket",
                     style: new TextStyle(
                         fontSize: 18.0,
                         color: Colors.white,
                         fontFamily: "NeoSansBold"),
                   ),
-                  new Container(
-                    child: new Text(
-                      "Rp. 120.000",
-                      style: new TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.white,
-                          fontFamily: "NeoSansBold"),
-                    ),
-                  )
                 ],
               ),
             ),
@@ -148,7 +113,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Image.asset(
-                        "assets/icons/icon_transfer.png",
+                        "assets/icons/bus.png",
                         width: 32.0,
                         height: 32.0,
                       ),
@@ -156,7 +121,7 @@ class _BerandaPageState extends State<BerandaPage> {
                         padding: EdgeInsets.only(top: 10.0),
                       ),
                       new Text(
-                        "Transfer",
+                        "Tiket Bus",
                         style: TextStyle(color: Colors.white, fontSize: 12.0),
                       )
                     ],
@@ -165,7 +130,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Image.asset(
-                        "assets/icons/icon_scan.png",
+                        "assets/icons/hotel.png",
                         width: 32.0,
                         height: 32.0,
                       ),
@@ -173,7 +138,7 @@ class _BerandaPageState extends State<BerandaPage> {
                         padding: EdgeInsets.only(top: 10.0),
                       ),
                       new Text(
-                        "Scan QR",
+                        "Tiket Hotel",
                         style: TextStyle(color: Colors.white, fontSize: 12.0),
                       )
                     ],
@@ -182,7 +147,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Image.asset(
-                        "assets/icons/icon_saldo.png",
+                        "assets/icons/train.png",
                         width: 32.0,
                         height: 32.0,
                       ),
@@ -190,7 +155,7 @@ class _BerandaPageState extends State<BerandaPage> {
                         padding: EdgeInsets.only(top: 10.0),
                       ),
                       new Text(
-                        "Isi Saldo",
+                        "Tiket Kereta",
                         style: TextStyle(color: Colors.white, fontSize: 12.0),
                       )
                     ],
@@ -199,7 +164,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Image.asset(
-                        "assets/icons/icon_menu.png",
+                        "assets/icons/travel.png",
                         width: 32.0,
                         height: 32.0,
                       ),
@@ -207,7 +172,7 @@ class _BerandaPageState extends State<BerandaPage> {
                         padding: EdgeInsets.only(top: 10.0),
                       ),
                       new Text(
-                        "Lainnya",
+                        "Tiket Pesawat",
                         style: TextStyle(color: Colors.white, fontSize: 12.0),
                       )
                     ],
@@ -222,12 +187,12 @@ class _BerandaPageState extends State<BerandaPage> {
   Widget _buildGojekServicesMenu() {
     return new SizedBox(
         width: double.infinity,
-        height: 220.0,
+        height: 125.0,
         child: new Container(
-            margin: EdgeInsets.only(top: 8.0, bottom: 8.0),
+            margin: EdgeInsets.only(top: 4.0, bottom: 4.0),
             child: GridView.builder(
                 physics: ClampingScrollPhysics(),
-                itemCount: 8,
+                itemCount: 4,
                 gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4),
                 itemBuilder: (context, position) {
@@ -278,14 +243,14 @@ class _BerandaPageState extends State<BerandaPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           new Text(
-            "GO-FOOD",
+            "Traveling",
             style: new TextStyle(fontFamily: "NeoSansBold"),
           ),
           new Padding(
             padding: EdgeInsets.only(top: 8.0),
           ),
           new Text(
-            "Pilihan Terlaris",
+            "Pilihan Terbaik",
             style: new TextStyle(fontFamily: "NeoSansBold"),
           ),
           new SizedBox(
@@ -427,7 +392,7 @@ class _BerandaPageState extends State<BerandaPage> {
       return new SafeArea(
           child: new Container(
         padding: EdgeInsets.only(left: 16.0, right: 16.0),
-        width: double.infinity,
+        width: double.maxFinite,
         decoration: new BoxDecoration(
             borderRadius: BorderRadius.circular(4.0), color: Colors.white),
         child: new Column(children: <Widget>[
@@ -439,17 +404,8 @@ class _BerandaPageState extends State<BerandaPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               new Text(
-                "GO-JEK Services",
+                "Traveller",
                 style: new TextStyle(fontFamily: "NeoSansBold", fontSize: 18.0),
-              ),
-              new OutlineButton(
-                color: GojekPalette.green,
-                onPressed: () {},
-                child: new Text(
-                  "EDIT FAVORITES",
-                  style:
-                      new TextStyle(fontSize: 12.0, color: GojekPalette.green),
-                ),
               ),
             ],
           ),
@@ -471,16 +427,16 @@ class _BerandaPageState extends State<BerandaPage> {
 
   Future<List<Food>> fetchFood() async {
     List<Food> _goFoodFeaturedList = [];
+    _goFoodFeaturedList
+        .add(new Food(title: " Antelope Canyon", image: "assets/images/1.jpg"));
     _goFoodFeaturedList.add(
-        new Food(title: "Steak Andakar", image: "assets/images/food_1.jpg"));
-    _goFoodFeaturedList.add(
-        new Food(title: "Mie Ayam Tumini", image: "assets/images/food_2.jpg"));
-    _goFoodFeaturedList.add(
-        new Food(title: "Tengkleng Hohah", image: "assets/images/food_3.jpg"));
-    _goFoodFeaturedList.add(
-        new Food(title: "Warung Steak", image: "assets/images/food_4.jpg"));
+        new Food(title: "Aogashima Volcano", image: "assets/images/2.jpg"));
     _goFoodFeaturedList.add(new Food(
-        title: "Kindai Warung Banjar", image: "assets/images/food_5.jpg"));
+        title: "Crystalline Turquoise Lake", image: "assets/images/10.jpg"));
+    _goFoodFeaturedList
+        .add(new Food(title: "Kota Bern", image: "assets/images/3.jpg"));
+    _goFoodFeaturedList
+        .add(new Food(title: "Beachy Head", image: "assets/images/5.jpg"));
 
     return new Future.delayed(new Duration(seconds: 1), () {
       return _goFoodFeaturedList;
@@ -491,29 +447,29 @@ class _BerandaPageState extends State<BerandaPage> {
     List<Promo> _poromoList = [];
 
     _poromoList.add(new Promo(
-        image: "assets/images/promo_1.jpg",
-        title: "Bayar PLN dan BPJS, dapat cashback 10%",
+        image: "assets/images/6.jpg",
+        title: "Destinasi Pulau Amorgos",
         content:
-            "Nikmatin cashback 10% untuk pembayaran PLN, BPJS, Google Voucher dan tagihan lain di GO-BILS.",
-        button: "MAU!"));
+            "Amorgos adalah pulau paling timur dari kelompok pulau Cyclades dan pulau terdekat dengan kelompok pulau Dodecanese di Yunani .",
+        button: "Selengkapnya"));
     _poromoList.add(new Promo(
-        image: "assets/images/promo_2.jpg",
-        title: "#CeritaGojek",
+        image: "assets/images/7.jpg",
+        title: "Destinasi Pulau Hainan",
         content:
-            "Berulang kali terpuruk tak menghalanginya untuk bangkit dan jadi kebanggan kami, Simak selengkapnya disini.",
-        button: "SELENGKAPNYA"));
+            "Hainan termasuk kepulauan yang terdiri dari pulau-pulau lainnya seperti Zhongsha, Xisha, dan Nansha serta wilayah laut sekitarnya. Menjadi pulau terbesar kedua di Cina",
+        button: "Selengkapnya"));
     _poromoList.add(new Promo(
-        image: "assets/images/promo_3.jpg",
-        title: "GOJEK Ultah Ke 8",
+        image: "assets/images/8.jpg",
+        title: " Dusseldorf",
         content:
-            "8 Tahun berdiri ada satu alasan kami tetap tumbuh dan berinovasi. Satu yang buat kami untuk terus berinovasi",
-        button: "CARI TAU!"));
+            " Dusseldorf, adalah pusat ekonomi regional yang terletak di tepi sungai Rhine",
+        button: "Selengkapnya"));
     _poromoList.add(new Promo(
-        image: "assets/images/promo_4.jpg",
-        title: "Gratis Pulsa 100rb*",
+        image: "assets/images/9.jpg",
+        title: "Los Angeles",
         content:
-            "Aktifkan 10 Voucher GO-PULSAmu sekarang biar ngabarin yang terdekat gak pakai terhambat.",
-        button: "LAKSANAKAN"));
+            "Los Angeles dengan jumlah penduduk sebanyak 3.792.621 jiwa sesuai Sensus Amerika Serikat 2010, adalah kota terpadat di negara bagian California, dan kota terpadat kedua di Amerika Serikat, setelah New York City. ",
+        button: "Selengkapnya"));
     return new Future.delayed(new Duration(seconds: 3), () {
       return _poromoList;
     });
