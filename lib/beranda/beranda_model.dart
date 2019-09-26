@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class GojekService {
+class TravelService {
   IconData image;
   Color color;
   String title;
 
-  GojekService({this.image, this.title, this.color});
+  TravelService({this.image, this.title, this.color});
 }
 
-class Food {
+class Travel {
   String title;
   String image;
-  Food({this.title, this.image});
+  Travel({this.title, this.image});
 }
 
-class Promo{
+class Promo {
   String image;
   String title;
   String content;

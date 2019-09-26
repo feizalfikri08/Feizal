@@ -28,7 +28,7 @@ class _LauncherPageState extends State<LauncherPage> {
     return new Scaffold(
       body: new Center(
         child: new Image.asset(
-          "assets/iii.png",
+          "assets/11.png",
           height: 100.0,
           width: 200.0,
         ),

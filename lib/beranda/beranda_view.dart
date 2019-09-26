@@ -10,26 +10,28 @@ class BerandaPage extends StatefulWidget {
 }
 
 class _BerandaPageState extends State<BerandaPage> {
-  List<GojekService> _gojekServiceList = [];
+  List<TravelService> _travelServiceList = [];
 
   @override
   void initState() {
     super.initState();
 
-    _gojekServiceList.add(new GojekService(
+    _travelServiceList.add(new TravelService(
         image: Icons.smartphone,
-        color: GojekPalette.menuRide,
+        color: TravelPalette.menuRide,
         title: "Paket Internet"));
-    _gojekServiceList.add(new GojekService(
+    _travelServiceList.add(new TravelService(
         image: Icons.airport_shuttle,
-        color: GojekPalette.menuCar,
+        color: TravelPalette.menuCar,
         title: "Antar Jemput"));
-    _gojekServiceList.add(new GojekService(
+    _travelServiceList.add(new TravelService(
         image: Icons.calendar_today,
-        color: GojekPalette.menuBluebird,
+        color: TravelPalette.menuBluebird,
         title: "Atur Schedule"));
-    _gojekServiceList.add(new GojekService(
-        image: Icons.restaurant, color: GojekPalette.menuFood, title: "Makan"));
+    _travelServiceList.add(new TravelService(
+        image: Icons.restaurant,
+        color: TravelPalette.menuFood,
+        title: "Restaurant"));
   }
 
   @override
@@ -37,7 +39,7 @@ class _BerandaPageState extends State<BerandaPage> {
     return new SafeArea(
       child: new Scaffold(
         appBar: new GojekAppBar(),
-        backgroundColor: GojekPalette.grey,
+        backgroundColor: TravelPalette.grey,
         body: new Container(
           child: new ListView(
             physics: ClampingScrollPhysics(),
@@ -48,7 +50,7 @@ class _BerandaPageState extends State<BerandaPage> {
                   child: new Column(
                     children: <Widget>[
                       _buildGopayMenu(),
-                      _buildGojekServicesMenu(),
+                      _buildTravelServicesMenu(),
                     ],
                   )),
               new Container(
@@ -56,7 +58,7 @@ class _BerandaPageState extends State<BerandaPage> {
                 margin: EdgeInsets.only(top: 16.0),
                 child: new Column(
                   children: <Widget>[
-                    _buildGoFoodFeatured(),
+                    _buildGotravelFeatured(),
                     _buildPromo(),
                   ],
                 ),
@@ -184,7 +186,7 @@ class _BerandaPageState extends State<BerandaPage> {
         ));
   }
 
-  Widget _buildGojekServicesMenu() {
+  Widget _buildTravelServicesMenu() {
     return new SizedBox(
         width: double.infinity,
         height: 125.0,
@@ -196,11 +198,11 @@ class _BerandaPageState extends State<BerandaPage> {
                 gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4),
                 itemBuilder: (context, position) {
-                  return _rowGojekService(_gojekServiceList[position]);
+                  return _rowTravelService(_travelServiceList[position]);
                 })));
   }
 
-  Widget _rowGojekService(GojekService gojekService) {
+  Widget _rowTravelService(TravelService travelService) {
     return new Container(
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -216,13 +218,13 @@ class _BerandaPageState extends State<BerandaPage> {
             },
             child: new Container(
               decoration: new BoxDecoration(
-                  border: Border.all(color: GojekPalette.grey200, width: 1.0),
+                  border: Border.all(color: TravelPalette.grey200, width: 1.0),
                   borderRadius:
                       new BorderRadius.all(new Radius.circular(20.0))),
               padding: EdgeInsets.all(12.0),
               child: new Icon(
-                gojekService.image,
-                color: gojekService.color,
+                travelService.image,
+                color: travelService.color,
                 size: 32.0,
               ),
             ),
@@ -230,13 +232,13 @@ class _BerandaPageState extends State<BerandaPage> {
           new Padding(
             padding: EdgeInsets.only(top: 6.0),
           ),
-          new Text(gojekService.title, style: new TextStyle(fontSize: 10.0))
+          new Text(travelService.title, style: new TextStyle(fontSize: 10.0))
         ],
       ),
     );
   }
 
-  Widget _buildGoFoodFeatured() {
+  Widget _buildGotravelFeatured() {
     return new Container(
       padding: EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 16.0),
       child: new Column(
@@ -256,7 +258,7 @@ class _BerandaPageState extends State<BerandaPage> {
           new SizedBox(
             height: 172.0,
             child: FutureBuilder<List>(
-                future: fetchFood(),
+                future: fetchTravel(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return new ListView.builder(
@@ -265,7 +267,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       physics: new ClampingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        return _rowGoFoodFeatured(snapshot.data[index]);
+                        return _rowGoTravelFeatured(snapshot.data[index]);
                       },
                     );
                   }
@@ -282,7 +284,7 @@ class _BerandaPageState extends State<BerandaPage> {
     );
   }
 
-  Widget _rowGoFoodFeatured(Food food) {
+  Widget _rowGoTravelFeatured(Travel travel) {
     return new Container(
       margin: EdgeInsets.only(right: 16.0),
       child: new Column(
@@ -290,7 +292,7 @@ class _BerandaPageState extends State<BerandaPage> {
           new ClipRRect(
             borderRadius: new BorderRadius.circular(8.0),
             child: new Image.asset(
-              food.image,
+              travel.image,
               width: 132.0,
               height: 132.0,
             ),
@@ -299,7 +301,7 @@ class _BerandaPageState extends State<BerandaPage> {
             padding: EdgeInsets.only(top: 8.0),
           ),
           new Text(
-            food.title,
+            travel.title,
           ),
         ],
       ),
@@ -338,7 +340,7 @@ class _BerandaPageState extends State<BerandaPage> {
             margin: EdgeInsets.only(bottom: 16.0),
             width: double.infinity,
             height: 1.0,
-            color: GojekPalette.grey200,
+            color: TravelPalette.grey200,
           ),
           new ClipRRect(
             borderRadius: new BorderRadius.circular(8.0),
@@ -371,7 +373,7 @@ class _BerandaPageState extends State<BerandaPage> {
           new Container(
             alignment: Alignment.centerRight,
             child: new MaterialButton(
-              color: GojekPalette.green,
+              color: TravelPalette.green,
               onPressed: () {},
               child: new Text(
                 promo.button,
@@ -398,7 +400,7 @@ class _BerandaPageState extends State<BerandaPage> {
         child: new Column(children: <Widget>[
           new Icon(
             Icons.drag_handle,
-            color: GojekPalette.grey,
+            color: TravelPalette.grey,
           ),
           new Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -413,11 +415,11 @@ class _BerandaPageState extends State<BerandaPage> {
             height: 300.0,
             child: new GridView.builder(
                 physics: new NeverScrollableScrollPhysics(),
-                itemCount: _gojekServiceList.length,
+                itemCount: _travelServiceList.length,
                 gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4),
                 itemBuilder: (context, position) {
-                  return _rowGojekService(_gojekServiceList[position]);
+                  return _rowTravelService(_travelServiceList[position]);
                 }),
           ),
         ]),
@@ -425,21 +427,21 @@ class _BerandaPageState extends State<BerandaPage> {
     });
   }
 
-  Future<List<Food>> fetchFood() async {
-    List<Food> _goFoodFeaturedList = [];
-    _goFoodFeaturedList
-        .add(new Food(title: " Antelope Canyon", image: "assets/images/1.jpg"));
-    _goFoodFeaturedList.add(
-        new Food(title: "Aogashima Volcano", image: "assets/images/2.jpg"));
-    _goFoodFeaturedList.add(new Food(
+  Future<List<Travel>> fetchTravel() async {
+    List<Travel> _goTravelFeaturedList = [];
+    _goTravelFeaturedList.add(
+        new Travel(title: " Antelope Canyon", image: "assets/images/1.jpg"));
+    _goTravelFeaturedList.add(
+        new Travel(title: "Aogashima Volcano", image: "assets/images/2.jpg"));
+    _goTravelFeaturedList.add(new Travel(
         title: "Crystalline Turquoise Lake", image: "assets/images/10.jpg"));
-    _goFoodFeaturedList
-        .add(new Food(title: "Kota Bern", image: "assets/images/3.jpg"));
-    _goFoodFeaturedList
-        .add(new Food(title: "Beachy Head", image: "assets/images/5.jpg"));
+    _goTravelFeaturedList
+        .add(new Travel(title: "Kota Bern", image: "assets/images/3.jpg"));
+    _goTravelFeaturedList
+        .add(new Travel(title: "Beachy Head", image: "assets/images/5.jpg"));
 
     return new Future.delayed(new Duration(seconds: 1), () {
-      return _goFoodFeaturedList;
+      return _goTravelFeaturedList;
     });
   }
 

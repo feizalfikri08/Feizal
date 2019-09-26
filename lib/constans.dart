@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class GojekPalette {
+class TravelPalette {
   static Color green = Color.fromARGB(255, 69, 170, 74);
   static Color grey = Color.fromARGB(255, 242, 242, 242);
   static Color grey200 = Color.fromARGB(200, 242, 242, 242);
@@ -15,10 +15,4 @@ class GojekPalette {
   static Color menuShop = Color(0xff0b945e);
   static Color menuMart = Color(0xff68a9e3);
   static Color menuTix = Color(0xffe86f16);
-
-
-
-
-
-
 }

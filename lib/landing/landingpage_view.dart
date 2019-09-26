@@ -33,7 +33,7 @@ class _LandingPageState extends State<LandingPage> {
         BottomNavigationBarItem(
           activeIcon: new Icon(
             Icons.home,
-            color: GojekPalette.green,
+            color: TravelPalette.green,
           ),
           icon: new Icon(
             Icons.home,
@@ -46,7 +46,7 @@ class _LandingPageState extends State<LandingPage> {
         BottomNavigationBarItem(
           activeIcon: new Icon(
             Icons.assignment,
-            color: GojekPalette.green,
+            color: TravelPalette.green,
           ),
           icon: new Icon(
             Icons.assignment,
@@ -57,7 +57,7 @@ class _LandingPageState extends State<LandingPage> {
         BottomNavigationBarItem(
           activeIcon: new Icon(
             Icons.mail,
-            color: GojekPalette.green,
+            color: TravelPalette.green,
           ),
           icon: new Icon(
             Icons.mail,
@@ -68,7 +68,7 @@ class _LandingPageState extends State<LandingPage> {
         BottomNavigationBarItem(
           activeIcon: new Icon(
             Icons.person,
-            color: GojekPalette.green,
+            color: TravelPalette.green,
           ),
           icon: new Icon(
             Icons.person,
