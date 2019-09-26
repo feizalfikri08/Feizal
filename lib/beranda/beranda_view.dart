@@ -75,7 +75,6 @@ class _BerandaPageState extends State<BerandaPage> {
                     children: <Widget>[
                       _buildGopayMenu(),
                       _buildGojekServicesMenu(),
-                      _buildPromo()
                     ],
                   )),
               new Container(
@@ -84,6 +83,7 @@ class _BerandaPageState extends State<BerandaPage> {
                 child: new Column(
                   children: <Widget>[
                     _buildGoFoodFeatured(),
+                    _buildPromo(),
                   ],
                 ),
               )
