@@ -303,6 +303,13 @@ class _BerandaPageState extends State<BerandaPage> {
           new Text(
             travel.title,
           ),
+          new Padding(
+            padding: EdgeInsets.only(top: 8.0),
+          ),
+          new Text(
+            travel.harga,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         ],
       ),
     );
@@ -431,16 +438,25 @@ class _BerandaPageState extends State<BerandaPage> {
     List<Travel> _goTravelFeaturedList = [];
     _goTravelFeaturedList.add(new Travel(
       title: " Antelope Canyon",
+      harga: "Rp.10.500.000",
       image: "assets/images/1.jpg",
     ));
-    _goTravelFeaturedList.add(
-        new Travel(title: "Aogashima Volcano", image: "assets/images/2.jpg"));
     _goTravelFeaturedList.add(new Travel(
-        title: "Crystalline Turquoise Lake", image: "assets/images/10.jpg"));
-    _goTravelFeaturedList
-        .add(new Travel(title: "Kota Bern", image: "assets/images/3.jpg"));
-    _goTravelFeaturedList
-        .add(new Travel(title: "Beachy Head", image: "assets/images/5.jpg"));
+        title: "Aogashima Volcano",
+        harga: "Rp.10.800.000",
+        image: "assets/images/2.jpg"));
+    _goTravelFeaturedList.add(new Travel(
+        title: "Crystalline Turquoise Lake",
+        harga: "Rp.17.800.000",
+        image: "assets/images/10.jpg"));
+    _goTravelFeaturedList.add(new Travel(
+        title: "Kota Bern",
+        harga: "Rp.12.800.000",
+        image: "assets/images/3.jpg"));
+    _goTravelFeaturedList.add(new Travel(
+        title: "Beachy Head",
+        harga: "Rp.14.800.000",
+        image: "assets/images/5.jpg"));
 
     return new Future.delayed(new Duration(seconds: 1), () {
       return _goTravelFeaturedList;
