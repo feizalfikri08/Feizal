@@ -9,11 +9,10 @@ class TravelService {
 }
 
 class Travel {
-  String negara;
   String title;
   String image;
   String harga;
-  Travel({this.negara, this.title, this.image, this.harga});
+  Travel({this.title, this.image, this.harga});
 }
 
 class Destinasi {

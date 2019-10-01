@@ -17,9 +17,10 @@ class _BerandaPageState extends State<BerandaPage> {
     super.initState();
 
     _travelServiceList.add(new TravelService(
-        image: Icons.smartphone,
-        color: TravelPalette.menuRide,
-        title: "Paket Internet"));
+      image: Icons.smartphone,
+      color: TravelPalette.menuRide,
+      title: "Paket Internet",
+    ));
     _travelServiceList.add(new TravelService(
         image: Icons.airport_shuttle,
         color: TravelPalette.menuCar,
@@ -271,6 +272,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       },
                     );
                   }
+
                   return Center(
                     child: SizedBox(
                         width: 40.0,
@@ -287,30 +289,37 @@ class _BerandaPageState extends State<BerandaPage> {
   Widget _rowGoTravelFeatured(Travel travel) {
     return new Container(
       margin: EdgeInsets.only(right: 16.0),
-      child: new Column(
-        children: <Widget>[
-          new ClipRRect(
-            borderRadius: new BorderRadius.circular(8.0),
-            child: new Image.asset(
-              travel.image,
-              width: 132.0,
-              height: 132.0,
-            ),
+      child: Material(
+        child: InkWell(
+          onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+            builder: (BuildContext context) => new Detail(),
+          )),
+          child: new Column(
+            children: <Widget>[
+              new ClipRRect(
+                borderRadius: new BorderRadius.circular(8.0),
+                child: new Image.asset(
+                  travel.image,
+                  width: 132.0,
+                  height: 132.0,
+                ),
+              ),
+              new Padding(
+                padding: EdgeInsets.only(top: 8.0),
+              ),
+              new Text(
+                travel.title,
+              ),
+              new Padding(
+                padding: EdgeInsets.only(top: 8.0),
+              ),
+              new Text(
+                travel.harga,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
-          new Padding(
-            padding: EdgeInsets.only(top: 8.0),
-          ),
-          new Text(
-            travel.title,
-          ),
-          new Padding(
-            padding: EdgeInsets.only(top: 8.0),
-          ),
-          new Text(
-            travel.harga,
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -493,5 +502,26 @@ class _BerandaPageState extends State<BerandaPage> {
     return new Future.delayed(new Duration(seconds: 3), () {
       return _poromoList;
     });
+  }
+}
+
+class Detail extends StatelessWidget {
+  Detail({this.title, this.image, this.harga});
+  final String title;
+  final String image;
+  final String harga;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: new ListView(
+        children: <Widget>[
+          new Container(
+            height: 240.0,
+            child: new Image.asset("assets/images/"),
+          )
+        ],
+      ),
+    );
   }
 }
