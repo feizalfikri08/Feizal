@@ -39,7 +39,7 @@ class _BerandaPageState extends State<BerandaPage> {
   Widget build(BuildContext context) {
     return new SafeArea(
       child: new Scaffold(
-        appBar: new GojekAppBar(),
+        appBar: new TravelAppBar(),
         backgroundColor: TravelPalette.grey,
         body: new Container(
           child: new ListView(
@@ -272,7 +272,6 @@ class _BerandaPageState extends State<BerandaPage> {
                       },
                     );
                   }
-
                   return Center(
                     child: SizedBox(
                         width: 40.0,
@@ -292,7 +291,11 @@ class _BerandaPageState extends State<BerandaPage> {
       child: Material(
         child: InkWell(
           onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-            builder: (BuildContext context) => new Detail(),
+            builder: (BuildContext context) => new Detail(
+              title: travel.title,
+              harga: travel.harga,
+              image: travel.image,
+            ),
           )),
           child: new Column(
             children: <Widget>[
@@ -506,20 +509,76 @@ class _BerandaPageState extends State<BerandaPage> {
 }
 
 class Detail extends StatelessWidget {
-  Detail({this.title, this.image, this.harga});
   final String title;
   final String image;
   final String harga;
 
+  const Detail({
+    Key key,
+    @required this.title,
+    @required this.image,
+    @required this.harga,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      appBar: AppBar(
+        title: new Text(title),
+        // leading: Builder(
+        //   builder: (BuildContext context) {
+        //     return IconButton(
+        //       icon: const Icon(Icons.menu),
+        //       onPressed: () {
+        //         Scaffold.of(context).openDrawer();
+        //       },
+        //       tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+        //     );
+        //   },
+        // ),
+      ),
       body: new ListView(
         children: <Widget>[
           new Container(
             height: 240.0,
-            child: new Image.asset("assets/images/"),
-          )
+            child: new Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
+          ),
+          new Container(
+            padding: new EdgeInsets.all(10.0),
+            child: new Row(
+              children: <Widget>[
+                new Expanded(
+                  child: new Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      new Text(
+                        title,
+                        style: TextStyle(
+                            fontSize: 20.0, fontWeight: FontWeight.bold),
+                      ),
+                      new Text(harga)
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          new Container(
+            padding: new EdgeInsets.all(10.0),
+            child: new Card(
+              child: new Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: new Text(
+                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                  style: new TextStyle(fontSize: 18.0),
+                  textAlign: TextAlign.justify,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
