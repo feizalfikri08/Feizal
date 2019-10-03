@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gojek/beranda/beranda_model.dart';
-import 'package:gojek/beranda/beranda_gojek_appbar.dart';
+import 'package:gojek/beranda/beranda_travel_appbar.dart';
 import 'package:gojek/constans.dart';
 import 'dart:async';
 
