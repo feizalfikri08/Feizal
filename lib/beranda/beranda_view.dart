@@ -525,17 +525,6 @@ class Detail extends StatelessWidget {
     return new Scaffold(
       appBar: AppBar(
         title: new Text(title),
-        // leading: Builder(
-        //   builder: (BuildContext context) {
-        //     return IconButton(
-        //       icon: const Icon(Icons.menu),
-        //       onPressed: () {
-        //         Scaffold.of(context).openDrawer();
-        //       },
-        //       tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-        //     );
-        //   },
-        // ),
       ),
       body: new ListView(
         children: <Widget>[
