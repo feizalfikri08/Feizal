@@ -4,6 +4,8 @@ import 'package:gojek/beranda/beranda_travel_appbar.dart';
 import 'package:gojek/constans.dart';
 import 'dart:async';
 
+import 'package:gojek/beranda/beranda_tabbar.dart';
+
 class BerandaPage extends StatefulWidget {
   @override
   _BerandaPageState createState() => new _BerandaPageState();
@@ -290,6 +292,8 @@ class _BerandaPageState extends State<BerandaPage> {
       margin: EdgeInsets.only(right: 16.0),
       child: Material(
         child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          splashColor: Colors.amberAccent,
           onTap: () => Navigator.of(context).push(new MaterialPageRoute(
             builder: (BuildContext context) => new Detail(
               title: travel.title,
@@ -524,7 +528,7 @@ class Detail extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: new Text(title),
+        title: Text(title),
       ),
       body: new ListView(
         children: <Widget>[
