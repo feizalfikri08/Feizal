@@ -552,13 +552,35 @@ class Detail extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20.0, fontWeight: FontWeight.bold),
                       ),
-                      new Text(harga)
+                      new Text(harga),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
+          // new Scaffold(
+          //   appBar: new AppBar(
+          //     backgroundColor: Colors.amber,
+          //     title: new Text("Daftar Elektronik"),
+          //     bottom: new TabBar(
+          //       tabs: <Widget>[
+          //         new Tab(
+          //           icon: new Icon(Icons.computer),
+          //         ),
+          //         new Tab(
+          //           icon: new Icon(Icons.headset),
+          //         ),
+          //         new Tab(
+          //           icon: new Icon(Icons.radio),
+          //         ),
+          //         new Tab(
+          //           icon: new Icon(Icons.smartphone),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
           new Container(
             padding: new EdgeInsets.all(10.0),
             child: new Card(
