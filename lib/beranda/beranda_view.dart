@@ -4,8 +4,6 @@ import 'package:gojek/beranda/beranda_travel_appbar.dart';
 import 'package:gojek/constans.dart';
 import 'dart:async';
 
-import 'package:gojek/beranda/beranda_tabbar.dart';
-
 class BerandaPage extends StatefulWidget {
   @override
   _BerandaPageState createState() => new _BerandaPageState();
@@ -559,28 +557,6 @@ class Detail extends StatelessWidget {
               ],
             ),
           ),
-          // new Scaffold(
-          //   appBar: new AppBar(
-          //     backgroundColor: Colors.amber,
-          //     title: new Text("Daftar Elektronik"),
-          //     bottom: new TabBar(
-          //       tabs: <Widget>[
-          //         new Tab(
-          //           icon: new Icon(Icons.computer),
-          //         ),
-          //         new Tab(
-          //           icon: new Icon(Icons.headset),
-          //         ),
-          //         new Tab(
-          //           icon: new Icon(Icons.radio),
-          //         ),
-          //         new Tab(
-          //           icon: new Icon(Icons.smartphone),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
           new Container(
             padding: new EdgeInsets.all(10.0),
             child: new Card(

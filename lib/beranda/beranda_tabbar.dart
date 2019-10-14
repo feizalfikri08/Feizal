@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Tabbar extends AppBar {
-  Tabbar()
+  Tabbar({TabController controller})
       : super(
             elevation: 0.25,
             backgroundColor: Colors.white,
