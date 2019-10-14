@@ -424,7 +424,7 @@ class _BerandaPageState extends State<BerandaPage> {
             color: TravelPalette.grey,
           ),
           new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new Text(
                 "Traveller",
