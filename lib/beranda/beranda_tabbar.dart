@@ -13,13 +13,13 @@ class Tabbar extends AppBar {
       child: new Scaffold(
         appBar: TabBar(
           tabs: <Widget>[
-            Tab(
+            new Tab(
               text: ("Detail"),
             ),
-            Tab(
+            new Tab(
               text: ("Detail"),
             ),
-            Tab(
+            new Tab(
               text: ("Detail"),
             ),
           ],

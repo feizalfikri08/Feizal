@@ -528,6 +528,22 @@ class Detail extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
+      bottomNavigationBar: new Container(
+        color: Colors.white,
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: new MaterialButton(
+                onPressed: () {},
+                child: new Text(
+                  "PESAN",
+                ),
+                color: Colors.green,
+              ),
+            )
+          ],
+        ),
+      ),
       body: new ListView(
         children: <Widget>[
           new Container(
@@ -550,7 +566,12 @@ class Detail extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20.0, fontWeight: FontWeight.bold),
                       ),
-                      new Text(harga),
+                      new Card(
+                        child: new Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: new Text(harga),
+                        ),
+                      ),
                     ],
                   ),
                 ),
