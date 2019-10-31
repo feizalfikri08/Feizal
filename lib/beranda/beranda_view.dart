@@ -28,7 +28,7 @@ class _BerandaPageState extends State<BerandaPage> {
     _travelServiceList.add(new TravelService(
         image: Icons.calendar_today,
         color: TravelPalette.menuBluebird,
-        title: "Atur Schedule"));
+        title: "Atur Jadwal"));
     _travelServiceList.add(new TravelService(
         image: Icons.restaurant,
         color: TravelPalette.menuFood,
